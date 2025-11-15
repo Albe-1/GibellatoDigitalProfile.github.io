@@ -34,21 +34,21 @@ I completed my PCTO at Kernel Computer, a small company located in San Giuseppe 
 <div style="display:flex; align-items:flex-end; height:200px; gap:20px; margin-top:30px;">
   <div style="text-align:center;">
     <div style="width:40px; height:160px; background:#ddd; margin:0 auto; position:relative; border-radius:5px;">
-      <div style="width:100%; height:120px; background: linear-gradient(to top, #007acc, #00aaff); position:absolute; bottom:0; border-radius:5px 5px 0 0;"></div>
+      <div style="width:100%; height:100px; background: linear-gradient(to top, #007acc, #00aaff); position:absolute; bottom:0; border-radius:5px 5px 0 0;"></div>
     </div>
     <span>GitHub</span>
   </div>
 
   <div style="text-align:center;">
     <div style="width:40px; height:160px; background:#ddd; margin:0 auto; position:relative; border-radius:5px;">
-      <div style="width:100%; height:160px; background: linear-gradient(to top, #007acc, #00aaff); position:absolute; bottom:0; border-radius:5px 5px 0 0;"></div>
+      <div style="width:100%; height:150px; background: linear-gradient(to top, #007acc, #00aaff); position:absolute; bottom:0; border-radius:5px 5px 0 0;"></div>
     </div>
     <span>C++ / C</span>
   </div>
 
   <div style="text-align:center;">
     <div style="width:40px; height:160px; background:#ddd; margin:0 auto; position:relative; border-radius:5px;">
-      <div style="width:100%; height:150px; background: linear-gradient(to top, #007acc, #00aaff); position:absolute; bottom:0; border-radius:5px 5px 0 0;"></div>
+      <div style="width:100%; height:135px; background: linear-gradient(to top, #007acc, #00aaff); position:absolute; bottom:0; border-radius:5px 5px 0 0;"></div>
     </div>
     <span>HTML5 / CSS</span>
   </div>
@@ -62,7 +62,7 @@ I completed my PCTO at Kernel Computer, a small company located in San Giuseppe 
 
   <div style="text-align:center;">
     <div style="width:40px; height:160px; background:#ddd; margin:0 auto; position:relative; border-radius:5px;">
-      <div style="width:100%; height:160px; background: linear-gradient(to top, #007acc, #00aaff); position:absolute; bottom:0; border-radius:5px 5px 0 0;"></div>
+      <div style="width:100%; height:155px; background: linear-gradient(to top, #007acc, #00aaff); position:absolute; bottom:0; border-radius:5px 5px 0 0;"></div>
     </div>
     <span>Communication</span>
   </div>
