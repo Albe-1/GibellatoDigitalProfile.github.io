@@ -3,15 +3,6 @@ layout: default
 title: Home
 ---
 
-## Core Information
-
-**Personal Details:**
-- Name: Alberto Gibellato
-- Location: Bassano del Grappa, Veneto
-- Languages: Italian, English
-
----
-
 ## About Me
 
 My name is Alberto Gibellato, I was born and currently live in Bassano del Grappa, a city in the province of Vicenza. I'm a dedicated and motivated young programmer and systems engineering student in my fifth year at the Enrico Fermi Technical Institute in Bassano del Grappa. My other hobbies include basketball, video games, and spending time with my friends. My career objective is to secure a position at a company specializing in programming or website design, where I can contribute with my existing skills, and continue to grow professionally.
