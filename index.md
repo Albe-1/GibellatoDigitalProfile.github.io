@@ -31,29 +31,39 @@ I completed my PCTO at Kernel Computer, a small company located in San Giuseppe 
 
 ## Skills
 
-
 <div style="display:flex; align-items:flex-end; height:200px; gap:20px; margin-top:30px;">
   <div style="text-align:center;">
-    <div style="width:40px; height:120px; background: linear-gradient(to top, #007acc, #00aaff); margin:0 auto;"></div>
-    <span>GitHub<br>60%</span>
-  </div>
-  <div style="text-align:center;">
-    <div style="width:40px; height:160px; background: linear-gradient(to top, #007acc, #00aaff); margin:0 auto;"></div>
-    <span>C++ / C<br>80%</span>
+    <div style="width:40px; height:160px; background:#ddd; margin:0 auto; position:relative; border-radius:5px;">
+      <div style="width:100%; height:120px; background: linear-gradient(to top, #007acc, #00aaff); position:absolute; bottom:0; border-radius:5px 5px 0 0;"></div>
+    </div>
+    <span>GitHub</span>
   </div>
 
   <div style="text-align:center;">
-    <div style="width:40px; height:150px; background: linear-gradient(to top, #007acc, #00aaff); margin:0 auto;"></div>
-    <span>HTML5 / CSS<br>75%</span>
+    <div style="width:40px; height:160px; background:#ddd; margin:0 auto; position:relative; border-radius:5px;">
+      <div style="width:100%; height:160px; background: linear-gradient(to top, #007acc, #00aaff); position:absolute; bottom:0; border-radius:5px 5px 0 0;"></div>
+    </div>
+    <span>C++ / C</span>
   </div>
 
   <div style="text-align:center;">
-    <div style="width:40px; height:140px; background: linear-gradient(to top, #007acc, #00aaff); margin:0 auto;"></div>
-    <span>Manual Skills<br>70%</span>
+    <div style="width:40px; height:160px; background:#ddd; margin:0 auto; position:relative; border-radius:5px;">
+      <div style="width:100%; height:150px; background: linear-gradient(to top, #007acc, #00aaff); position:absolute; bottom:0; border-radius:5px 5px 0 0;"></div>
+    </div>
+    <span>HTML5 / CSS</span>
   </div>
 
   <div style="text-align:center;">
-    <div style="width:40px; height:160px; background: linear-gradient(to top, #007acc, #00aaff); margin:0 auto;"></div>
-    <span>Communication<br>80%</span>
+    <div style="width:40px; height:160px; background:#ddd; margin:0 auto; position:relative; border-radius:5px;">
+      <div style="width:100%; height:140px; background: linear-gradient(to top, #007acc, #00aaff); position:absolute; bottom:0; border-radius:5px 5px 0 0;"></div>
+    </div>
+    <span>Manual Skills</span>
+  </div>
+
+  <div style="text-align:center;">
+    <div style="width:40px; height:160px; background:#ddd; margin:0 auto; position:relative; border-radius:5px;">
+      <div style="width:100%; height:160px; background: linear-gradient(to top, #007acc, #00aaff); position:absolute; bottom:0; border-radius:5px 5px 0 0;"></div>
+    </div>
+    <span>Communication</span>
   </div>
 </div>
