@@ -48,7 +48,7 @@
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 0 5px rgba(0,0,0,0.05);
-      text-align: center;
+      text-align: left;
     }
     .profile-img {
       width: 120px;
@@ -63,19 +63,26 @@
       margin-bottom: 10px;
       font-size: 1.8em;
     }
-    .profile-languages {
-      font-weight: 500;
-      margin-bottom: 15px;
-    }
-    .profile-languages-title {
+    .section-title {
+      font-size: 1.3em;
       font-weight: 700;
-      margin-bottom: 5px;
-      font-size: 0.95em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+    .profile-languages {
+      margin-bottom: 15px;
+      padding-left: 10px;
+    }
+    .profile-languages li {
+      list-style: disc;
+      margin-left: 20px;
     }
     
     h2 {
-      font-size: 1.1em;
+      font-size: 1.3em;
+      font-weight: 700;
       margin-top: 20px;
+      text-transform: uppercase;
     }
     ul {
       padding-left: 20px;
@@ -104,10 +111,12 @@
     <aside>
       <div class="profile-name">ALBERTO GIBELLATO</div>
 
+      <div class="section-title">Languages</div>
       <div class="profile-languages">
-        <div class="profile-languages-title">Languages</div>
-        Italian (Native)<br>
-        English (B1)
+        <ul>
+          <li>Italian (Native)</li>
+          <li>English (B1)</li>
+        </ul>
       </div>
 
       <h2>Contacts & Links</h2>
