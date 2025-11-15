@@ -196,12 +196,12 @@
   <script>
     const downloadBtn = document.getElementById("downloadPdfBtn");
     downloadBtn.onclick = () => {
-      const element = document.getElementById("pdfContent"); // NUOVO: includiamo anche l'aside
+      const element = document.getElementById("pdfContent");
       const opt = {
         margin: 0.5,
         filename: 'Gibellato_digital_profile.pdf',
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
+        html2canvas: { scale: 2, width: element.scrollWidth },
         jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
       };
       html2pdf().set(opt).from(element).save();
