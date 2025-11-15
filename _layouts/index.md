@@ -3,12 +3,31 @@ layout: default
 title: Home
 ---
 
-# Welcome to My Digital Profile
+## Core Information
 
-Hello! My name is Alberto and this is my personal digital profile.
+**Personal Details:**
+- Name: Alberto Gibellato
+- Location: Bassano del Grappa, Veneto
+- Languages: Italian, English
 
-## Skills
-- Skill 1
+---
 
-## Contact
-- Email: albegi.ag@gmail.com
+## About Me
+
+My name is Alberto Gibellato, I was born and currently live in Bassano del Grappa, a city in the province of Vicenza. I'm a dedicated and motivated young programmer and systems engineering student in my fifth year at the Enrico Fermi Technical Institute in Bassano del Grappa. My other hobbies include basketball, video games, and spending time with my friends. My career objective is to secure a position at a company specializing in programming or website design, where I can contribute with my existing skills, and continue to grow professionally.
+
+---
+
+## Education
+
+I began attending ITIS Enrico Fermi in 2021, and now, in my final year, I expect to graduate in June 2026. In 2023, I chose to continue with the Computer Science and Telecommunications course, through which I have studied various subjects over the past three years, including computer science, systems and networks, information systems technologies and techniques, telecommunications, and business organization.
+
+---
+
+## Certifications
+
+In the 2023/2024 school year, I attended an 8-hour course on workplace health and safety. During the course, I received training on general workplace safety, electrical and postural risks, eye strain related to the use of monitor, and the interpretation of safety signage.
+
+In the 2024/2025 school year, I attended the Cisco Networking Academy course. During the course, I learned how to configure various network devices, monitor network traffic, communicate using network devices, and identify potential risks in a network.
+
+---
