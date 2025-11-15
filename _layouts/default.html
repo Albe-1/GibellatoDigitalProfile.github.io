@@ -59,9 +59,10 @@
     .profile-img {
       width: 120px;
       height: 120px;
-      border-radius: 50%;
       object-fit: cover;
       margin-bottom: 15px;
+      border: 3px solid #007acc;
+      border-radius: 0;
     }
     .profile-name {
       font-weight: 700;
@@ -116,6 +117,7 @@
     </div>
 
     <aside>
+      <img src="{{ '/IMG-20230501-WA0005.jpg' | relative_url }}" alt="Profile Image" class="profile-img">
       <div class="profile-name">ALBERTO GIBELLATO</div>
 
       <div class="section-title">Languages</div>
