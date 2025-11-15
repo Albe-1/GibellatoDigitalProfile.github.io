@@ -15,29 +15,65 @@
     header {
       background: #222;
       color: white;
-      padding: 40px 20px;
+      padding: 30px 20px;
       text-align: center;
     }
-    section {
-      max-width: 800px;
+    main {
+      display: flex;
+      max-width: 1000px;
       margin: 30px auto;
+      gap: 20px;
+    }
+    .content {
+      flex: 2;
       background: white;
       padding: 25px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+    aside {
+      flex: 1;
+      background: #fafafa;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
     h1, h2 {
       margin-top: 0;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>{{ site.title }}</h1>
     <p>{{ site.description }}</p>
   </header>
 
-  {{ content }}
+  <main>
+    <div class="content">
+      {{ content }}
+    </div>
+
+    <aside>
+      <h2>Contacts & Links</h2>
+      <ul>
+        <li>Email: albegi.ag@gmail.com</li>
+        <li>LinkedIn: <a href="https://linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a></li>
+        <li>GitHub: <a href="https://github.com/Albe-1" target="_blank">github.com/Albe-1</a></li>
+      </ul>
+    </aside>
+  </main>
 
 </body>
 </html>
