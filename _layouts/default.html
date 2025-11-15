@@ -114,6 +114,27 @@
     a:hover {
       text-decoration: underline;
     }
+    @media (max-width: 600px) {
+      header {
+        height: 25vh;
+      }
+      header h1 {
+        font-size: 10vw;
+      }
+
+      main {
+        flex-direction: column;
+      }
+
+      .content, aside {
+        max-width: 100%;
+      }
+
+      .profile-img {
+        width: 150px;
+        height: 300px;
+      }
+    }
   </style>
 </head>
 <body>
