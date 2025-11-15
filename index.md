@@ -22,3 +22,7 @@ In the 2023/2024 school year, I attended an 8-hour course on workplace health an
 In the 2024/2025 school year, I attended the Cisco Networking Academy course. During the course, I learned how to configure various network devices, monitor network traffic, communicate using network devices, and identify potential risks in a network.
 
 ---
+
+## Internship Experience
+
+I completed my PCTO at Kernel Computer, a small company located in San Giuseppe di Cassola (VI). During this experience, I had the opportunity to collaborate with other 2 members, which helped me gain valuable experience and further develop my IT skills by installing various software on customer PCs. Additionally, I acquired new skills related to manual PC assembly and maintenance by replacing broken components.
