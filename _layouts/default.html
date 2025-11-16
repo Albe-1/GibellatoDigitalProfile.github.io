@@ -43,8 +43,7 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       font-family: 'Lora', serif;
       font-size: 1em;
-      line-height: 1.6;
-      color: #333;
+      line-height: 1.6
     }
     aside {
       flex: 1;
@@ -83,53 +82,16 @@
       background-color: #007acc;
       margin: 15px 0;
     }
-    #pdfContent {
-      display: flex;
-      gap: 20px;
+    .profile-languages,
+    .profile-contacts {
+      margin-bottom: 15px;
+      padding-left: 10px;
+      text-align: left;
     }
-    @media (max-width: 420px) {
-      .floating-pdf {
-        top: 12px;
-        right: 12px;
-        padding: 8px 10px;
-        font-size: 0.85em;
-      }
-    }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 7vw;
-      }
-      main {
-        flex-direction: column;
-      }
-      #pdfContent {
-        flex-direction: column;
-      }
-      aside {
-        order: -1;
-      }
-      .profile-img {
-        width: 150px;
-        height: 260px;
-      }
-    }
-    @media (max-width: 600px) {
-      .skills-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-      }
-      .skills-container > div {
-        width: 50px;
-      }
-      .skills-container > div div {
-        width: 25px;
-        height: 100px;
-      }
-      .skills-container span {
-        font-size: 0.75em;
-      }
+    .profile-languages li,
+    .profile-contacts li {
+      list-style: disc;
+      margin-left: 20px;
     }
     .floating-pdf {
       position: fixed;
@@ -148,9 +110,26 @@
     .floating-pdf:hover {
       background: #005b99;
     }
-    .pdf-view {
+    @media (max-width: 600px) {
+      header h1 { font-size: 10vw; }
+      main { flex-direction: column; }
+      aside { order: -1; }
+      .profile-img { width: 150px; height: 260px; }
+    }
+    #cv-pdf {
       width: 800px;
-      margin: 0 auto;
+      padding: 40px;
+      display: flex;
+      gap: 35px;
+      background: white;
+      color: black;
+      font-family: Arial, sans-serif;
+    }
+    #cv-pdf .sidebar {
+      width: 260px;
+    }
+    #cv-pdf .content {
+      flex: 1;
     }
   </style>
 </head>
@@ -159,21 +138,20 @@
     <h1>{{ site.title }}</h1>
   </header>
 
-  <button id="downloadPdfBtn" class="floating-pdf">PDF</button>
+  <button id="downloadPdf" class="floating-pdf">PDF</button>
   
-  <main>
-    <div id="pdfContent">
-      <div class="content">
-        {{ content }}
-      </div>
+  <div id="cv">
+    <main class="content">
+      {{ content }}
+    </main>
 
-      <aside>
+      <aside class = "sidebar">
         <img src="{{ '/IMG-20230501-WA0005.jpg' | relative_url }}" alt="Profile Image" class="profile-img">
         <div class="profile-name">ALBERTO GIBELLATO</div>
         <div class="profile-divider"></div>
       
         <h2>Info & Contacts</h2>
-        <ul style="text-align:left;">
+        <ul class="profile-contacts">
           <li>Country: Italy</li>
           <li>Phone number: +39 338 XXX XXXX</li>
           <li>Email: albegi.ag@gmail.com</li>
@@ -181,7 +159,7 @@
         </ul>
       
         <div class="section-title">Languages</div>
-        <ul style="text-align:left;">
+        <ul class="profile-languages">
           <li>Italian (Native)</li>
           <li>English (B1)</li>
         </ul>
@@ -189,23 +167,26 @@
     </div>
   </main>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
   <script>
-    const downloadBtn = document.getElementById("downloadPdfBtn");
-    downloadBtn.onclick = () => {
-      const element = document.getElementById("pdfContent");
-      element.classList.add("pdf-view");
-      const opt = {
-        margin: 0.5,
+    document.getElementById("downloadPdf").addEventListener("click", () => {
+      const original = document.getElementById("cv");
+      const clone = original.cloneNode(true);
+
+      clone.id = "cv-pdf";
+      clone.style.position = "absolute";
+      clone.style.left = "-9999px";
+      document.body.appendChild(clone);
+
+      html2pdf().from(clone).set({
+        margin: 10,
         filename: 'Gibellato_digital_profile.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: [230, 297], orientation: 'portrait' }
-      };
-      html2pdf().set(opt).from(element).save().then(() => {
-        element.classList.remove("pdf-view");
+        html2canvas: { scale: 2, useCORS: true, scrollY: 0 },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+      }).save().then(() => {
+        clone.remove();
       });
-    };
+    });
   </script>
 </body>
 </html>
