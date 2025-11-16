@@ -158,19 +158,22 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
     document.getElementById("downloadPdf").addEventListener("click", () => {
-      const element = document.getElementById("pdfContent");
-      element.classList.add("pdf-layout");
+      window.scrollTo({ top: 0, behavior: "instant" });
+      setTimeout(() => {
+        const element = document.getElementById("pdfContent");
+        element.classList.add("pdf-layout");
       
-      const opt = {
-        margin: 10,
-        filename: 'Gibellato_digital_profile.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
-      };
-      html2pdf().set(opt).from(element).save().then(() => {
-        element.classList.remove("pdf-layout");
-      });
+        const opt = {
+          margin: 10,
+          filename: 'Gibellato_digital_profile.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2, useCORS: true },
+          jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+        };
+        html2pdf().set(opt).from(element).save().then(() => {
+          element.classList.remove("pdf-layout");
+        });
+      }, 200);
     });
   </script>
 </body>
