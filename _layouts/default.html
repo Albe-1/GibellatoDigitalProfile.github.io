@@ -116,21 +116,6 @@
       aside { order: -1; }
       .profile-img { width: 150px; height: 260px; }
     }
-    #cv-pdf {
-      width: 800px;
-      padding: 40px;
-      display: flex;
-      gap: 35px;
-      background: white;
-      color: black;
-      font-family: Arial, sans-serif;
-    }
-    #cv-pdf .sidebar {
-      width: 260px;
-    }
-    #cv-pdf .content {
-      flex: 1;
-    }
   </style>
 </head>
 <body>
@@ -140,51 +125,47 @@
 
   <button id="downloadPdf" class="floating-pdf">PDF</button>
   
-  <div id="cv">
-    <main class="content">
+  <main id="pdfContent">
+    <div class="content">
       {{ content }}
-    </main>
-
-      <aside class = "sidebar">
-        <img src="{{ '/IMG-20230501-WA0005.jpg' | relative_url }}" alt="Profile Image" class="profile-img">
-        <div class="profile-name">ALBERTO GIBELLATO</div>
-        <div class="profile-divider"></div>
-      
-        <h2>Info & Contacts</h2>
-        <ul class="profile-contacts">
-          <li>Country: Italy</li>
-          <li>Phone number: +39 338 XXX XXXX</li>
-          <li>Email: albegi.ag@gmail.com</li>
-          <li>GitHub: <a href="https://github.com/Albe-1" target="_blank">github.com/Albe-1</a></li>
-        </ul>
-      
-        <div class="section-title">Languages</div>
-        <ul class="profile-languages">
-          <li>Italian (Native)</li>
-          <li>English (B1)</li>
-        </ul>
-      </aside>
     </div>
+
+    <aside class = "sidebar">
+      <img src="{{ '/IMG-20230501-WA0005.jpg' | relative_url }}" alt="Profile Image" class="profile-img">
+      <div class="profile-name">ALBERTO GIBELLATO</div>
+      <div class="profile-divider"></div>
+      
+      <h2>Info & Contacts</h2>
+      <ul class="profile-contacts">
+        <li>Country: Italy</li>
+        <li>Phone number: +39 338 XXX XXXX</li>
+        <li>Email: albegi.ag@gmail.com</li>
+        <li>GitHub: <a href="https://github.com/Albe-1" target="_blank">github.com/Albe-1</a></li>
+      </ul>
+      
+      <div class="section-title">Languages</div>
+      <ul class="profile-languages">
+        <li>Italian (Native)</li>
+        <li>English (B1)</li>
+      </ul>
+    </aside>
   </main>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script>
     document.getElementById("downloadPdf").addEventListener("click", () => {
-      const original = document.getElementById("cv");
-      const clone = original.cloneNode(true);
-
-      clone.id = "cv-pdf";
-      clone.style.position = "absolute";
-      clone.style.left = "-9999px";
-      document.body.appendChild(clone);
-
-      html2pdf().from(clone).set({
+      const element = document.getElementById("pdfContent");
+      element.style.width = "1000px";
+      
+      const opt = {
         margin: 10,
         filename: 'Gibellato_digital_profile.pdf',
-        html2canvas: { scale: 2, useCORS: true, scrollY: 0 },
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
-      }).save().then(() => {
-        clone.remove();
+      };
+      html2pdf().set(opt).from(element).save().then(() => {
+        element.style.width = "";
       });
     });
   </script>
