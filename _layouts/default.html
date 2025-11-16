@@ -116,6 +116,10 @@
       aside { order: -1; }
       .profile-img { width: 150px; height: 260px; }
     }
+    .pdf-layout {
+      display: flex;
+      flex-direction: column;
+    }
   </style>
 </head>
 <body>
@@ -155,7 +159,7 @@
   <script>
     document.getElementById("downloadPdf").addEventListener("click", () => {
       const element = document.getElementById("pdfContent");
-      element.style.width = "1000px";
+      element.classList.add("pdf-layout");
       
       const opt = {
         margin: 10,
@@ -165,7 +169,7 @@
         jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
       };
       html2pdf().set(opt).from(element).save().then(() => {
-        element.style.width = "";
+        element.classList.remove("pdf-layout");
       });
     });
   </script>
