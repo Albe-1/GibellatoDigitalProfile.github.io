@@ -200,7 +200,7 @@
         filename: 'Gibellato_digital_profile.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: [250, 320], orientation: 'portrait' }
+        jsPDF: { unit: 'mm', format: [230, 297], orientation: 'portrait' }
       };
       html2pdf().set(opt).from(element).save().then(() => {
         element.classList.remove("pdf-view");
