@@ -74,3 +74,21 @@ I completed my PCTO at Kernel Computer, a small company located in San Giuseppe 
     <span>Communication</span>
   </div>
 </div>
+
+---
+
+## My Projects
+
+In this link, you can find 2 projects that I created at school, which I describe in more detail below:
+**[Visit my GitHub Portfolio](https://github.com/Albe-1/portfolio)** 
+
+### DogAPI – Dog Information & Image Retriever
+
+This Python project interacts with the **Dog CEO API** to retrieve dog breed information.  
+It collects the first 10 breeds, displays their sub-breeds, fetches a random image for each, and exports all processed data in **JSON** and **XML** formats.
+
+### 🔐 Key Verification System – Secure Message with SHA-256
+
+This project consists of two Python scripts that together create a simple message protection system using **SHA-256 hashing**.
+
+---
