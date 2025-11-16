@@ -82,18 +82,17 @@
       height: 1px;
       background-color: #007acc;
       margin: 15px 0;
-      border-radius: 1px;
-    }
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
     }
     #pdfContent {
       display: flex;
       gap: 20px;
+    }
+    @media (max-width: 600px) {
+      .floating-pdf {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+      }
     }
     @media (max-width: 600px) {
       header h1 {
@@ -108,18 +107,27 @@
       aside {
         order: -1;
       }
-      @media (max-width: 600px) {
-        .skills-container > div div {
-          height: 120px !important;
-          width: 30px !important;
-        }
-        .skills-container span {
-          font-size: 0.75em;
-        }
-      }
       .profile-img {
         width: 150px;
         height: 260px;
+      }
+    }
+    @media (max-width: 600px) {
+      .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
+      .skills-container > div {
+        width: 50px;
+      }
+      .skills-container > div div {
+        width: 25px;
+        height: 100px;
+      }
+      .skills-container span {
+        font-size: 0.75em;
       }
     }
     .floating-pdf {
@@ -132,21 +140,11 @@
       border: none;
       padding: 10px 14px;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       cursor: pointer;
       font-weight: 700;
-      font-size: 0.95em;
     }
     .floating-pdf:hover {
       background: #005b99;
-    }
-    @media (max-width: 420px) {
-      .floating-pdf {
-        top: 12px;
-        right: 12px;
-        padding: 8px 10px;
-        font-size: 0.85em;
-      }
     }
     .pdf-view {
       width: 800px;
@@ -199,11 +197,12 @@
         margin: 0.5,
         filename: 'Gibellato_digital_profile.pdf',
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 3 },
-        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
       };
       html2pdf().set(opt).from(element).save().then(() => {
         element.classList.remove("pdf-view");
+      });
     };
   </script>
 </body>
