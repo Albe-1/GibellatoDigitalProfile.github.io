@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ site.title }}</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
   
   <style>
@@ -18,13 +17,13 @@
     header {
       background: #222;
       color: white;
-      height: 30vh;
+      padding: 40px 20px;
+      height: auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 0 20px;
     }
     header h1 {
       margin: 0;
@@ -62,8 +61,6 @@
       object-fit: cover;
       margin-bottom: 15px;
       border: 2px solid #333;
-      border-radius: 0;
-      background-color: black;
       display: block;
       margin-left: auto; 
       margin-right: auto;
@@ -72,7 +69,14 @@
       font-weight: 700;
       text-transform: uppercase;
       margin-bottom: 10px;
-      font-size: 2.0em;
+      font-size: 2em;
+    }
+    h2, .section-title {
+      font-size: 1.3em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      text-align: left;
     }
     .profile-divider {
       border: 0;
@@ -81,32 +85,6 @@
       margin: 15px 0;
       border-radius: 1px;
     }
-    .section-title {
-      font-size: 1.3em;
-      font-weight: 700;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      text-align: left;
-    }
-    .profile-languages,
-    .profile-contacts {
-      margin-bottom: 15px;
-      padding-left: 10px;
-      text-align: left;
-    }
-    .profile-languages li,
-    .profile-contacts li {
-      list-style: disc;
-      margin-left: 20px;
-    }
-    
-    h2 {
-      font-size: 1.3em;
-      font-weight: 700;
-      margin-top: 20px;
-      text-transform: uppercase;
-      text-align: left;
-    }
     a {
       color: #007acc;
       text-decoration: none;
@@ -114,22 +92,23 @@
     a:hover {
       text-decoration: underline;
     }
+    #pdfContent {
+      display: flex;
+      gap: 20px;
+    }
     @media (max-width: 600px) {
-      header {
-        height: 25vh;
-      }
       header h1 {
-        font-size: 10vw;
+        font-size: 7vw;
       }
       main {
         flex-direction: column;
       }
-      .content, aside {
-        max-width: 100%;
+      #pdfContent {
+        flex-direction: column;
       }
       .profile-img {
         width: 150px;
-        height: 300px;
+        height: 260px;
       }
     }
     .floating-pdf {
@@ -148,8 +127,14 @@
       font-size: 0.95em;
     }
     .floating-pdf:hover { background: #005b99; }
+    
     @media (max-width: 420px) {
-      .floating-pdf { top: 12px; right: 12px; padding: 8px 10px; font-size: 0.85em; }
+      .floating-pdf {
+        top: 12px;
+        right: 12px;
+        padding: 8px 10px;
+        font-size: 0.85em;
+      }
     }
   </style>
 </head>
@@ -161,7 +146,7 @@
   <button id="downloadPdfBtn" class="floating-pdf">PDF</button>
   
   <main>
-    <div id="pdfContent" style="display:flex; gap:20px;">
+    <div id="pdfContent">
       <div class="content">
         {{ content }}
       </div>
@@ -172,22 +157,18 @@
         <div class="profile-divider"></div>
       
         <h2>Info & Contacts</h2>
-        <div class="profile-contacts">
-          <ul>
-            <li>Country: Italy</li>
-            <li>Phone number: +39 338 XXX XXXX</li>
-            <li>Email: albegi.ag@gmail.com</li>
-            <li>GitHub: <a href="https://github.com/Albe-1" target="_blank">github.com/Albe-1</a></li>
-          </ul>
-        </div>
+        <ul style="text-align:left;">
+          <li>Country: Italy</li>
+          <li>Phone number: +39 338 XXX XXXX</li>
+          <li>Email: albegi.ag@gmail.com</li>
+          <li>GitHub: <a href="https://github.com/Albe-1" target="_blank">github.com/Albe-1</a></li>
+        </ul>
       
         <div class="section-title">Languages</div>
-        <div class="profile-languages">
-          <ul>
-            <li>Italian (Native)</li>
-            <li>English (B1)</li>
-          </ul>
-        </div>
+        <ul style="text-align:left;">
+          <li>Italian (Native)</li>
+          <li>English (B1)</li>
+        </ul>
       </aside>
     </div>
   </main>
@@ -201,7 +182,7 @@
         margin: 0.5,
         filename: 'Gibellato_digital_profile.pdf',
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, width: element.scrollWidth },
+        html2canvas: { scale: 2 },
         jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
       };
       html2pdf().set(opt).from(element).save();
