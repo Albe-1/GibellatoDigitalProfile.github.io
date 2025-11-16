@@ -41,7 +41,6 @@
       padding: 25px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  
       font-family: 'Lora', serif;
       font-size: 1em;
       line-height: 1.6;
@@ -106,6 +105,18 @@
       #pdfContent {
         flex-direction: column;
       }
+      aside {
+        order: -1;
+      }
+      @media (max-width: 600px) {
+        .skills-container > div div {
+          height: 120px !important;
+          width: 30px !important;
+        }
+        .skills-container span {
+          font-size: 0.75em;
+        }
+      }
       .profile-img {
         width: 150px;
         height: 260px;
@@ -126,8 +137,9 @@
       font-weight: 700;
       font-size: 0.95em;
     }
-    .floating-pdf:hover { background: #005b99; }
-    
+    .floating-pdf:hover {
+      background: #005b99;
+    }
     @media (max-width: 420px) {
       .floating-pdf {
         top: 12px;
@@ -135,6 +147,10 @@
         padding: 8px 10px;
         font-size: 0.85em;
       }
+    }
+    .pdf-view {
+      width: 800px;
+      margin: 0 auto;
     }
   </style>
 </head>
@@ -178,14 +194,16 @@
     const downloadBtn = document.getElementById("downloadPdfBtn");
     downloadBtn.onclick = () => {
       const element = document.getElementById("pdfContent");
+      element.classList.add("pdf-view");
       const opt = {
         margin: 0.5,
         filename: 'Gibellato_digital_profile.pdf',
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
+        html2canvas: { scale: 3 },
         jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
       };
-      html2pdf().set(opt).from(element).save();
+      html2pdf().set(opt).from(element).save().then(() => {
+        element.classList.remove("pdf-view");
     };
   </script>
 </body>
