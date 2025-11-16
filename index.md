@@ -87,7 +87,7 @@ In this link, you can find 2 projects that I created at school, which I describe
 This Python project interacts with the **Dog CEO API** to retrieve dog breed information.  
 It collects the first 10 breeds, displays their sub-breeds, fetches a random image for each, and exports all processed data in **JSON** and **XML** formats.
 
-### 🔐 Key Verification System – Secure Message with SHA-256
+### Key Verification System – Secure Message with SHA-256
 
 This project consists of two Python scripts that together create a simple message protection system using **SHA-256 hashing**.
 
