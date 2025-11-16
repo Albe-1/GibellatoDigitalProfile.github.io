@@ -87,11 +87,12 @@
       display: flex;
       gap: 20px;
     }
-    @media (max-width: 600px) {
+    @media (max-width: 420px) {
       .floating-pdf {
-        top: auto;
-        bottom: 20px;
-        right: 20px;
+        top: 12px;
+        right: 12px;
+        padding: 8px 10px;
+        font-size: 0.85em;
       }
     }
     @media (max-width: 600px) {
@@ -142,6 +143,7 @@
       border-radius: 8px;
       cursor: pointer;
       font-weight: 700;
+      font-size: 0.95em;
     }
     .floating-pdf:hover {
       background: #005b99;
@@ -198,7 +200,7 @@
         filename: 'Gibellato_digital_profile.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        jsPDF: { unit: 'mm', format: [250.320], orientation: 'portrait' }
       };
       html2pdf().set(opt).from(element).save().then(() => {
         element.classList.remove("pdf-view");
